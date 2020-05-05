@@ -24,7 +24,7 @@ int readPerson(Person p){
     return 1;
 }
 
-int updateProduct(Product *p){
+int updatePerson(Person *p){
 
     printf("이름은?");
     scanf("%d",&p->name);
@@ -42,7 +42,7 @@ int updateProduct(Product *p){
     return 1;
 }
 
-int deleteProduct(Product *p){
+int deletePerson(Person *p){
     p->dob.day = -1;
     printf("주소록 삭제됨!");
 }
