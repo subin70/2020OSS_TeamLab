@@ -14,9 +14,14 @@ typedef struct {
   char city[50];
 } Person;
 
-createPerson(Person *p); 
-readPerson(Person p);
-updatePerson(Person *p, int count);
-deletePerson(Person *p);
-listPerson(Person *p);
-selectDataNum(Person *p, int count);
+int createPerson(Person *p); 
+void readPerson(Person p);
+int updatePerson(Person *p, int count);
+int deletePerson(Person *p);
+void listPerson(Person *p);
+int selectDataNum(Person *p, int count);
+void saveData(Person *p, int count);
+int loadData(Person *p);
+void searchName(Person *p, int count);
+void searchPhone(Person *p, int count);
+void searchDob(Person *p, int count);
