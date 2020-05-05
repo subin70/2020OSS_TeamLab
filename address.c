@@ -24,9 +24,9 @@ int loadData(Person *p){
                 printf("=> 파일없음. \n");
                 return 0;
         }
-        for(; ; count++){
-                fscanf(fp, "%s %4d%2d%2d %s %s", p[i].name, &p[i].dob.year, &p[i].dob.month, &p[i].dob.day, p[i].phone, p[i].city);
-                if(feof(fp)) break;
+        while(!feof(fp)){
+                fscanf(fp, "%s %4d%2d%2d %s %s", p[count].name, &p[count].dob.year, &p[count].dob.month, &p[count].dob.day, p[count].phone, p[count].city);
+                count++;
         }
         fclose(fp);
         return count;
