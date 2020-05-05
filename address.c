@@ -17,3 +17,18 @@ void saveData(Person *p, int count){
         fclose(fp);
         printf("=> 파일저장완료!\n");
 }
+int loadData(Person *p){
+        int count = 0;
+        FILE *fp = fopen("person.txt", "rt");
+        if(fp == NULL){
+                printf("=> 파일없음. \n");
+                return 0;
+        }
+        for(; ; count++){
+                fscanf(fp, "%s %4d%2d%2d %s %s", p[i].name, &p[i].dob.year, &p[i].dob.month, &p[i].dob.day, p[i].phone, p[i].city);
+                if(feof(fp)) break;
+        }
+        fclose(fp);
+        return count;
+}
+
