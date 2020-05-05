@@ -60,7 +60,7 @@ int main(void){
 		if(menu == 1){
 			if(count > 0) 
 				listPerson(plist, curCount);
-			ele
+			else
 				printf("=> 데이터없음.\n");
 		}
 		else if(menu == 2){
