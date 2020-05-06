@@ -1,3 +1,4 @@
+#include <string.h>
 #include "person.h"
 
 int selectDataNum(Person *p, int count);
