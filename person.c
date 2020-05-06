@@ -27,16 +27,16 @@ int readPerson(Person p){
 int updatePerson(Person *p){
 
     printf("이름은?");
-    scanf("%d",&p->name);
+    scanf("%s",p->name);
 
     printf("생년월일은? ");
-    scanf("%d",&p->dob);
+    scanf("%4d%2d%2d",&p->dob.year, &p->dob.month, &p->dob.day);
     
     printf("전화번호는?");
-    scanf("%d",&p->phone);
+    scanf("%s",p->phone);
 
     printf("사는 도시는?");
-    scanf("%d",&p->city);
+    scanf("%s",p->city);
 
     printf("주소록 수정 완료\n");
     return 1;
