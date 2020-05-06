@@ -1,16 +1,17 @@
 #include <stdio.h>
 
- typedef struct {  
-     int year;  
-     int month;  
-     int day;  
-   } Date;    
+typedef struct {  
+	int year;  
+	int month;  
+	int day;  
+} Date;    
 
-   typedef struct {  
-     char name[64];  
-     Date dob;  
-     char phone[14];  
-   } Person;  
+typedef struct {  
+	char name[64];  
+	Date dob;  
+	char phone[14];
+	char city[28];
+} Person;  
 
 
 //함수 prototype
