@@ -49,7 +49,7 @@ int selectMenu(){
 }
 int main(void){
 
-	Peron plist[10];
+	Person plist[10];
 	int menu, count, curCount;
 	count = loadData(plist);
 	curCount = count;
@@ -65,7 +65,6 @@ int main(void){
 		}
 		else if(menu == 2){
 			count += createPerson(&plist[curCount++]);
-			printf("'%s' 의 정보가 추가됨!\n");
 		}
 		else if(menu == 3){
 			if(count <= 0){
@@ -77,8 +76,7 @@ int main(void){
 					printf("=> 취소됨!\n");
 					continue;
 				}
-				updatePerson(&plist[curCount]);
-				printf("=> '%s' 의 정보가 수정됨!\n");
+				updatePerson(&plist[num-1]);
 			}
 		}
 		else if(menu == 4){
@@ -91,8 +89,7 @@ int main(void){
 					printf("=> 취소됨!\n");
 					continue;
 				}
-				deletePerson(&plist[curCount]);
-				printf("=> '%s' 의 정보가 삭제됨!\n");
+				deletePerson(&plist[num-1]);
 				count--;
 			}
 		}
