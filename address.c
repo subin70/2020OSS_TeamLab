@@ -25,7 +25,7 @@ int loadData(Person *p){
                 return 0;
         }
         while(!feof(fp)){
-                fscanf(fp, "%s %4d%2d%2d %s %s", p[count].name, &p[count].dob.year, &p[count].dob.month, &p[count].dob.day, p[count].phone, p[count].city);
+                fscanf(fp, "%s %4d%2d%2d %s %s\n", p[count].name, &p[count].dob.year, &p[count].dob.month, &p[count].dob.day, p[count].phone, p[count].city);
                 count++;
         }
         fclose(fp);
