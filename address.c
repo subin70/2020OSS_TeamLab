@@ -29,20 +29,20 @@ int loadData(Person *p){
                 count++;
         }
         fclose(fp);
-	printf("=> 파일로드 성공!");
+	printf("=> 파일로드 성공!\n");
         return count;
 }
 int selectMenu(){
 	int menu;
 
-	printf("=======전화번호부=======\n");
+	printf("\n=======전화번호부=======\n");
 	printf("(1) 전화번호부 목록 조회\n");
 	printf("(2) 전화번호부 목록 추가\n");
 	printf("(3) 전화번호부 목록 수정\n");
 	printf("(4) 전화번호부 목록 삭제\n");
 	printf("(5) 파일 저장\n");
 	printf("(0) 프로그램 종료\n");
-	printf("=> 메뉴 입력: ");
+	printf("\n=> 메뉴 입력: ");
 	scanf("%d",&menu);
 
 	return menu;
