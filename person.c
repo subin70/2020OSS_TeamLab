@@ -51,10 +51,11 @@ void listPerson(Person *p, int count){
     printf("이름  생년월일  전화번호  사는도시\n");
     printf("----------------------------------\n");
 
-for(int i=0;i<count;i++){
-	if(p[i].dob.day != -1){
-		printf("%d",i+1);
-		readPerson(p[i]);
-	}
+	for(int i=0;i<count;i++){
+		if(p[i].dob.day != -1){
+			printf("%d",i+1);
+			readPerson(p[i]);
+		}
 	printf("\n");
-}
+	}
+}	
