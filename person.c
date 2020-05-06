@@ -3,25 +3,25 @@
 int createPerson(Person *p){
 
     printf("이름은?");
-    scanf("%d",&p->name);
+    scanf("%s",p->name);
 
     printf("생년월일은? ");
     scanf("%4d%2d%2d",&p->dob.year,&p->dob.month,&p->dob.day);
    
     
     printf("전화번호는?");
-    scanf("%d",&p->phone);
+    scanf("%s",p->phone);
 
     printf("사는 도시는?");
-    scanf("%d",&p->city);
+    scanf("%s",p->city);
 
     return 1;
 }
 
 int readPerson(Person p){
-    printf("%s %4d%2d%2d %s %s" ,p.name, p.dob.year, p.dob.month, p.dob.day, p.phone, p.city);
+    printf("%s %4d%02d%02d %s %s" ,p.name, p.dob.year, p.dob.month, p.dob.day, p.phone, p.city);
 
-    return 1;
+    return 0;
 }
 
 int updatePerson(Person *p){
