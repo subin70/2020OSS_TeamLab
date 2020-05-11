@@ -48,3 +48,23 @@ int selectMenu(){
 	return menu;
 }
 
+void searchName(Person *p, int count){
+	int scount =0 ;
+	char search[64];
+	printf("찾는 이름은? ");
+	scanf("%s", search);
+
+	printf("\n=======전화번호부=======\n");
+	for(int i=0; i<count;i++){
+		if(p[i].age != -1)
+			if(strstr(p[i].name,search)){
+				readPerson(p[i]);
+				scount++;
+			}
+		}
+	}
+	if(scount==0)printf("검색결과 없음\n");
+	printf("\n");
+}
+
+//void searchPhone(Person *p, int count);
