@@ -47,60 +47,24 @@ int selectMenu(){
 
 	return menu;
 }
-int main(void){
 
-	Person plist[10];
-	int menu, count, curCount;
-	count = loadData(plist);
-	curCount = count;
+void searchName(Person *p, int count){
+	int scount =0 ;
+	char search[64];
+	printf("찾는 이름은? ");
+	scanf("%s", search);
 
-	while(1){
-		menu = selectMenu();
-		if(menu == 0)	break;
-		if(menu == 1){
-			if(count > 0) 
-				listPerson(plist, curCount);
-			else
-				printf("=> 데이터없음.\n");
-		}
-		else if(menu == 2){
-			count += createPerson(&plist[curCount++]);
-		}
-		else if(menu == 3){
-			if(count <= 0){
-				printf("=> 데이터없음.\n");
-				continue;
-			}else{
-				int num = selectDataNum(plist, count);
-				if(num == 0){
-					printf("=> 취소됨!\n");
-					continue;
-				}
-				updatePerson(&plist[num-1]);
+	printf("\n=======전화번호부=======\n");
+	for(int i=0; i<count;i++){
+		if(p[i].age != -1)
+			if(strstr(p[i].name,search)){
+				readPerson(p[i]);
+				scount++;
 			}
-		}
-		else if(menu == 4){
-			if(count <= 0){
-				printf("=>데이터없음.\n");
-				continue;
-			}else{
-				int num = selectDataNum(plist, count);
-				if(num == 0){
-					printf("=> 취소됨!\n");
-					continue;
-				}
-				deletePerson(&plist[num-1]);
-				count--;
-			}
-		}
-		else if(menu == 5){
-			if(count <= 0){
-				printf("=> 데이터없음.\n");
-				continue;
-			}
-			saveData(plist, curCount);
 		}
 	}
-	printf("=> 프로그램 종료\n");
-	return 0;
+	if(scount==0)printf("검색결과 없음\n");
+	printf("\n");
 }
+
+//void searchPhone(Person *p, int count);
