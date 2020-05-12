@@ -1,2 +1,2 @@
-TARGET : book
-DTARGET : debug_book
+TARGET : addressbook
+DTARGET : debug_addressbook
