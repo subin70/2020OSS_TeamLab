@@ -41,7 +41,7 @@ void searchName(Person *p, int count){
 
 	printf("\n=======전화번호부=======\n");
 	for(int i=0; i<count;i++){
-		if(p[i].age != -1)
+		if(p[i].dob.day != -1){
 			if(strstr(p[i].name,search)){
 				readPerson(p[i]);
 				scount++;
@@ -58,7 +58,7 @@ void searchDob(Person *p, int count){
 	int scount = 0;
 	
 	printf("검색할 생일(월일)은?: ");
-	scanf("%2d%2d", &Bmth, &Bday);
+	scanf("%2d%2d", &smth, &sday);
 	printf("\n======= 검색결과 =======\n");
 	for(int i = 0; i<count; i++){
 		if(p[i].dob.day != -1){
