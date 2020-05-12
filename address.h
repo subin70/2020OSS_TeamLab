@@ -7,3 +7,4 @@ int loadData(Person *p);
 void searchName(Person *p, int count);
 void searchPhone(Person *p, int count);
 void searchDob(Person *p, int count);
+void searchYob(Person *p, int count);
