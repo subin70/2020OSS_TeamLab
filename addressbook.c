@@ -66,13 +66,15 @@ int main(void){
 			}
 		}
 		//여기부터 해주세요 5. 이름, 6.전화번호
-		/*else if(menu == 5){
+
+		else if(menu == 5){
 			if(count <= 0){
 				printf("=> 데이터없음.\n");
 				continue;
 			}
-			searchName
-		}*/
+			searchName(plist, curCount);
+		}
+		
 		else if(menu == 7){
 			int opt; //생일 검색 옵션(1. 생년, 2. 생일)
 			printf("1. 출생년도 검색\n");
