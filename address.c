@@ -52,7 +52,7 @@ void searchName(Person *p, int count){
 	printf("\n");
 }
 
-//void searchPhone(Person *p, int count);
+//void searchPhone(Person *p, int count)
 void searchDob(Person *p, int count){
 	int smth, sday;
 	int scount = 0;
