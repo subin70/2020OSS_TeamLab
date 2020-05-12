@@ -43,8 +43,9 @@ int updatePerson(Person *p){
 }
 
 int deletePerson(Person *p){
-    p->dob.day = -1;
-    printf("주소록 삭제됨!\n");
+	p->dob.day = -1;
+	printf("주소록 삭제됨!\n");
+	return 1;
 }
 
 void listPerson(Person *p, int count){
