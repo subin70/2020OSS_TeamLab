@@ -49,7 +49,8 @@ void searchName(Person *p, int count){
 			}
 		}
 	}
-	if(scount==0)printf("검색결과 없음.\n");
+	if(scount==0)
+		printf("검색결과 없음.\n");
 	printf("\n");
 }
 
@@ -58,7 +59,20 @@ void searchPhone(Person *p, int count){
 	char search[14];
 	
 	printf("검색할  번호는?: ");
-
+	scanf("%s", search);
+	
+	prinf("\n========전화번호부=======\n");
+	for(int i=0;i<count;i++){
+		if(p[i].dob.day != -1){
+			if(strstr(p[i].phone,search)){
+				readPerson(p[i]);
+				scount++;
+			}
+		}
+	}
+	if(scount==0)
+		printf("검색결과 없음.\n");
+	printf("\n");
 }
 void searchDob(Person *p, int count){
 	int smth, sday;
