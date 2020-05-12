@@ -36,7 +36,7 @@ int loadData(Person *p){
 void searchName(Person *p, int count){
 	int scount =0 ;
 	char search[64];
-	printf("찾는 이름은? ");
+	printf(" 이름은? ");
 	scanf("%s", search);
 
 	printf("\n=======전화번호부=======\n");
@@ -52,7 +52,13 @@ void searchName(Person *p, int count){
 	printf("\n");
 }
 
-//void searchPhone(Person *p, int count)
+void searchPhone(Person *p, int count){
+	int scount=0;
+	char search[14];
+	
+	printf("검색할  번호는?: ");
+
+}
 void searchDob(Person *p, int count){
 	int smth, sday;
 	int scount = 0;
