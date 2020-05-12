@@ -36,7 +36,8 @@ int loadData(Person *p){
 void searchName(Person *p, int count){
 	int scount =0 ;
 	char search[64];
-	printf("찾는 이름은? ");
+
+	printf("검색할 이름은? ");
 	scanf("%s", search);
 
 	printf("\n=======전화번호부=======\n");
@@ -48,11 +49,31 @@ void searchName(Person *p, int count){
 			}
 		}
 	}
-	if(scount==0)printf("검색결과 없음.\n");
+	if(scount==0)
+		printf("검색결과 없음.\n");
 	printf("\n");
 }
 
-//void searchPhone(Person *p, int count);
+void searchPhone(Person *p, int count){
+	int scount=0;
+	char search[14];
+	
+	printf("검색할  번호는?: ");
+	scanf("%s", search);
+	
+	printf("\n========전화번호부=======\n");
+	for(int i=0;i<count;i++){
+		if(p[i].dob.day != -1){
+			if(strstr(p[i].phone,search)){
+				readPerson(p[i]);
+				scount++;
+			}
+		}
+	}
+	if(scount==0)
+		printf("검색결과 없음.\n");
+	printf("\n");
+}
 void searchDob(Person *p, int count){
 	int smth, sday;
 	int scount = 0;
