@@ -79,7 +79,7 @@ int main(void){
 				printf("=>데이터 없음.\n");
 				continue;
 			}
-			seacrhPhone(plist, curCount);
+			searchPhone(plist, curCount);
 		}	
 
 		else if(menu == 7){
