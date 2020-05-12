@@ -69,14 +69,32 @@ void searchName(Person *p, int count){
 
 //void searchPhone(Person *p, int count);
 void searchDob(Person *p, int count){
-	int Bmth, Bday;
+	int smth, sday;
 	int scount = 0;
+	
 	printf("검색할 생일(월일)은?: ");
 	scanf("%2d%2d", &Bmth, &Bday);
 	printf("\n======= 검색결과 =======\n");
 	for(int i = 0; i<count; i++){
 		if(p[i].dob.day != -1){
-			if(p[i].dob.month == Bmth && p[i].dob.day == Bday){
+			if(p[i].dob.month == smth && p[i].dob.day == sday){
+				readPerson(p[i]);
+				scount++;
+			}
+		}
+	}
+	if(scount == 0) printf("검색결과 없음.\n");
+	printf("\n");
+}
+void searchYob(Person *p, int count){
+	int syear, scount = 0;
+	
+	printf("검색할 생년은?: ");
+	scanf("%d", &syear);
+	printf("\n======= 검색결과 =======\n");
+	for(int i = 0; i<count; i++){
+		if(p[i].dob.day != -1){
+			if(p[i].dob.year == syear){
 				readPerson(p[i]);
 				scount++;
 			}
