@@ -58,7 +58,6 @@ int main(void){
 				continue;
 			}else{
 				int num = selectDataNum(plist, curCount);
-				if(num == 0){
 					printf("=> 취소됨!\n");
 					continue;
 				}
