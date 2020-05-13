@@ -19,7 +19,7 @@ int createPerson(Person *p){
 }
 
 int readPerson(Person p){
-    printf("%-8s %-4d%02d%02d %-4s %s" ,p.name, p.dob.year, p.dob.month, p.dob.day, p.phone, p.city);
+    printf("%8s %4d%02d%02d  %-15s %4s" ,p.name, p.dob.year, p.dob.month, p.dob.day, p.phone, p.city);
 
     return 0;
 }
@@ -49,12 +49,12 @@ int deletePerson(Person *p){
 }
 
 void listPerson(Person *p, int count){
-    printf("이름\t생년월일\t 전화번호\t 사는도시\n");
-    printf("----------------------------------\n");
+    printf("No.  이름  생년월일\t전화번호   사는도시\n");
+    printf("------------------------------------------\n");
 
 	for(int i=0;i<count;i++){
 		if(p[i].dob.day != -1){
-			printf("%-2d. ",i+1);
+			printf("%02d. ",i+1);
 			readPerson(p[i]);
 		}
 	printf("\n");
