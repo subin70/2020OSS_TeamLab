@@ -40,7 +40,7 @@ void searchName(Person *p, int count){
 	printf("검색할 이름은? ");
 	scanf("%s", search);
 
-	printf("\n=======전화번호부=======\n");
+	printf("\n============ 검색결과 ============\n");
 	for(int i=0; i<count;i++){
 		if(p[i].dob.day != -1){
 			if(strstr(p[i].name,search)){
@@ -60,13 +60,14 @@ void searchPhone(Person *p, int count){
 	
 	printf("검색할  번호는?: ");
 	scanf("%s", search);
-	
-	printf("\n========전화번호부=======\n");
+
+	printf("\n============ 검색결과 ============\n");
 	for(int i=0;i<count;i++){
 		if(p[i].dob.day != -1){
 			if(strstr(p[i].phone,search)){
 				readPerson(p[i]);
 				scount++;
+				printf("\n");
 			}
 		}
 	}
@@ -80,12 +81,13 @@ void searchDob(Person *p, int count){
 	
 	printf("검색할 생일(월일)은(4자리)? ");
 	scanf("%2d%2d", &smth, &sday);
-	printf("\n======= 검색결과 =======\n");
+	printf("\n============ 검색결과 ============\n");
 	for(int i = 0; i<count; i++){
 		if(p[i].dob.day != -1){
 			if(p[i].dob.month == smth && p[i].dob.day == sday){
 				readPerson(p[i]);
 				scount++;
+				printf("\n");
 			}
 		}
 	}
@@ -103,6 +105,7 @@ void searchYob(Person *p, int count){
 			if(p[i].dob.year == syear){
 				readPerson(p[i]);
 				scount++;
+				printf("\n");
 			}
 		}
 	}
