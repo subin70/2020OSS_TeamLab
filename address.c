@@ -78,7 +78,7 @@ void searchDob(Person *p, int count){
 	int smth, sday;
 	int scount = 0;
 	
-	printf("검색할 생일(월일)은?: ");
+	printf("검색할 생일(월일)은(4자리)? ");
 	scanf("%2d%2d", &smth, &sday);
 	printf("\n======= 검색결과 =======\n");
 	for(int i = 0; i<count; i++){
@@ -95,7 +95,7 @@ void searchDob(Person *p, int count){
 void searchYob(Person *p, int count){
 	int syear, scount = 0;
 	
-	printf("검색할 생년은?: ");
+	printf("검색할 생년은(4자리)? ");
 	scanf("%d", &syear);
 	printf("\n======= 검색결과 =======\n");
 	for(int i = 0; i<count; i++){
