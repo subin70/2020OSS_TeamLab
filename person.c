@@ -56,7 +56,7 @@ void listPerson(Person *p, int count){
 		if(p[i].dob.day != -1){
 			printf("%02d. ",i+1);
 			readPerson(p[i]);
+			printf("\n");
 		}
-	printf("\n");
 	}
 }	

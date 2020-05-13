@@ -44,7 +44,7 @@ int main(void){
 				printf("=> 데이터없음.\n");
 				continue;
 			}else{
-				int num = selectDataNum(plist, count);
+				int num = selectDataNum(plist, curCount);
 				if(num == 0){
 					printf("=> 취소됨!\n");
 					continue;
@@ -57,7 +57,7 @@ int main(void){
 				printf("=>데이터없음.\n");
 				continue;
 			}else{
-				int num = selectDataNum(plist, count);
+				int num = selectDataNum(plist, curCount);
 				if(num == 0){
 					printf("=> 취소됨!\n");
 					continue;
