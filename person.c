@@ -35,7 +35,7 @@ int updatePerson(Person *p){
     printf("전화번호는? ");
     scanf("%s",p->phone);
 
-    printf("사는 도시는?");
+    printf("사는 도시는? ");
     scanf("%s",p->city);
 
     printf("=> 주소록 수정 완료\n");
