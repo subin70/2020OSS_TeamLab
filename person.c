@@ -2,17 +2,17 @@
 
 int createPerson(Person *p){
 
-    printf("이름은?");
+    printf("이름은? ");
     scanf("%s",p->name);
 
-    printf("생년월일은? ");
+    printf("생년월일은?(8자리) ");
     scanf("%4d%2d%2d",&p->dob.year,&p->dob.month,&p->dob.day);
    
     
-    printf("전화번호는?");
+    printf("전화번호는? ");
     scanf("%s",p->phone);
 
-    printf("사는 도시는?");
+    printf("사는 도시는? ");
     scanf("%s",p->city);
 
     return 1;
@@ -26,25 +26,25 @@ int readPerson(Person p){
 
 int updatePerson(Person *p){
 
-    printf("이름은?");
+    printf("이름은? ");
     scanf("%s",p->name);
 
-    printf("생년월일은? ");
+    printf("생년월일은?(8자리) ");
     scanf("%4d%2d%2d",&p->dob.year, &p->dob.month, &p->dob.day);
     
-    printf("전화번호는?");
+    printf("전화번호는? ");
     scanf("%s",p->phone);
 
     printf("사는 도시는?");
     scanf("%s",p->city);
 
-    printf("주소록 수정 완료\n");
+    printf("=> 주소록 수정 완료\n");
     return 1;
 }
 
 int deletePerson(Person *p){
 	p->dob.day = -1;
-	printf("주소록 삭제됨!\n");
+	printf("=> 주소록 삭제됨!\n");
 	return 1;
 }
 
