@@ -37,6 +37,7 @@ int main(void){
 		}
 		else if(menu == 2){
 			count += createPerson(&plist[curCount++]);
+			printf("=>%s의 주소록 저장됨.",plist[curCount-1].name);
 		}
 		else if(menu == 3){
 			if(count <= 0){
