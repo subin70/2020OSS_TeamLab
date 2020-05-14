@@ -23,6 +23,9 @@ int main(void){
 
 	Person plist[10];
 	int menu, count, curCount;
+	#ifdef
+      		printf("debug : call loadData(plist)\n");
+   	#endif
 	count = loadData(plist);
 	curCount = count;
 
