@@ -49,6 +49,9 @@ int main(void){
 				printf("=> 데이터없음.\n");
 		}
 		else if(menu == 2){
+			#ifdef
+      				printf("debug : call loadData(plist)\n");
+   			#endif
 			count += createPerson(&plist[curCount++]);
 			printf("=>%s의 주소록 저장됨.\n\n",plist[curCount-1].name);
 		}
