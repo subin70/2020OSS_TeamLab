@@ -39,8 +39,12 @@ int main(void){
 		menu = selectMenu();
 		if(menu == 0)	break;
 		if(menu == 1){
-			if(count > 0) 
+			if(count > 0){ 
+				#ifdef
+      					printf("debug : call listPerson(plist,curCount)\n");
+   				#endif
 				listPerson(plist, curCount);
+			}
 			else
 				printf("=> 데이터없음.\n");
 		}
