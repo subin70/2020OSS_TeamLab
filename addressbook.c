@@ -29,9 +29,12 @@ int main(void){
 	count = loadData(plist);
 	curCount = count;
 
+	#ifdef
+      		printf("debug : enter the while loop\n");
+   	#endif
 	while(1){
 		#ifdef
-      			printf("debug : call loadData(plist)\n");
+      			printf("debug : call selectMenu()\n");
    		#endif
 		menu = selectMenu();
 		if(menu == 0)	break;
