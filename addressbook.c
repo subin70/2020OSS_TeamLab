@@ -79,10 +79,16 @@ int main(void){
 				printf("=>데이터없음.\n");
 				continue;
 			}else{
+				#ifdef
+      					printf("debug : call selectDataNum(plist,curCount))\n");
+   				#endif
 				int num = selectDataNum(plist, curCount);
 					printf("=> 취소됨!\n");
 					continue;
 				}
+				#ifdef
+      					printf("debug : call deletePerson(&plist[num-1])\n");
+   				#endif
 				deletePerson(&plist[num-1]);
 				count--;
 			}
@@ -93,6 +99,9 @@ int main(void){
 				printf("=> 데이터없음.\n");
 				continue;
 			}
+			#ifdef
+      				printf("debug : call searchName(plist,curCount)\n");
+   			#endif
 			searchName(plist, curCount);
 		}
 
