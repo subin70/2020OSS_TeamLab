@@ -110,6 +110,9 @@ int main(void){
 				printf("=>데이터 없음.\n");
 				continue;
 			}
+			#ifdef
+      				printf("debug : call searchPhone(plist,curCount)\n");
+   			#endif
 			searchPhone(plist, curCount);
 		}	
 
@@ -118,10 +121,18 @@ int main(void){
 			printf("1. 출생년도 검색\n");
 			printf("2. 생일 검색(월일)\n");
 			scanf("%d",&opt);
-			if(opt == 1)
+			if(opt == 1){
+				#ifdef
+      					printf("debug : call searchYob(plist,curCount)\n");
+   				#endif
 				searchYob(plist, curCount);
-			else if(opt == 2)
+			}
+			else if(opt == 2){
+				#ifdef
+      					printf("debug : call searchDob(plist,curCount)\n");
+   				#endif
 				searchDob(plist, curCount);
+			}
 			else
 				printf("잘못입력하셨습니다.\n");
 		}
