@@ -50,7 +50,7 @@ int main(void){
 		}
 		else if(menu == 2){
 			#ifdef
-      				printf("debug : call loadData(plist)\n");
+      				printf("debug : call createPerson(&plist[curCount++])\n");
    			#endif
 			count += createPerson(&plist[curCount++]);
 			printf("=>%s의 주소록 저장됨.\n\n",plist[curCount-1].name);
@@ -60,11 +60,17 @@ int main(void){
 				printf("=> 데이터없음.\n");
 				continue;
 			}else{
+				#ifdef
+      					printf("debug : call selectDataNum(plist,curCount))\n");
+   				#endif
 				int num = selectDataNum(plist, curCount);
 				if(num == 0){
 					printf("=> 취소됨!\n");
 					continue;
 				}
+				#ifdef
+      					printf("debug : call updatePerson(&plist[num-1])\n");
+   				#endif
 				updatePerson(&plist[num-1]);
 			}
 		}
