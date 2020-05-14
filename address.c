@@ -1,4 +1,5 @@
 #include "address.h"
+
 int selectDataNum(Person *p, int count){
         listPerson(p, count);
         int index;      // index번호 저장
@@ -6,8 +7,6 @@ int selectDataNum(Person *p, int count){
         scanf("%d", &index);
         return index;
 }
-
-
 void saveData(Person *p, int count){
         FILE *fp = fopen("person.txt", "wt");
         for(int i = 0; i < count; i++){
@@ -43,7 +42,6 @@ void searchName(Person *p, int count){
 	scanf("%s", search);
 
 	printf("\n============ 검색결과 ============\n");
-	printf("\n=======전화번호부=======\n");
 	for(int i=0; i<count;i++){
 		if(p[i].dob.day != -1){
 			if(strstr(p[i].name,search)){
@@ -65,7 +63,6 @@ void searchPhone(Person *p, int count){
 	scanf("%s", search);
 
 	printf("\n============ 검색결과 ============\n");
-	printf("\n========전화번호부=======\n");
 	for(int i=0;i<count;i++){
 		if(p[i].dob.day != -1){
 			if(strstr(p[i].phone,search)){
@@ -84,9 +81,6 @@ void searchDob(Person *p, int count){
 	int scount = 0;
 	
 	printf("검색할 생일(월일)은(4자리)? ");
-	scanf("%2d%2d", &smth, &sday);
-	printf("\n============ 검색결과 ============\n");
-	printf("검색할 생일(월일)은?: ");
 	scanf("%2d%2d", &smth, &sday);
 	printf("\n======= 검색결과 =======\n");
 	for(int i = 0; i<count; i++){

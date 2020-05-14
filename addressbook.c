@@ -23,38 +23,34 @@ int main(void){
 
 	Person plist[10];
 	int menu, count, curCount;
-	#ifdef
-      		printf("debug : call loadData(plist)\n");
-   	#endif
+	#ifdef DEBUG
+		printf("debug : call loadData(plist)\n");
+	#endif
 	count = loadData(plist);
-	curCount = count;
-#ifdef
-      printf("debug : call loadData(plist)\n");
-   #endif
-
-	#ifdef
-      		printf("debug : enter the while loop\n");
-   	#endif
-	while(1){
-		#ifdef
-      			printf("debug : call selectMenu()\n");
-   		#endif
+	curCount = count;	
+	#ifdef DEBUG
+		printf("debug : enter the while loop\n");
+	#endif
+	while(1){	
+		#ifdef DEBUG
+			printf("debug : call selectMenu()\n");
+		#endif
 		menu = selectMenu();
 		if(menu == 0)	break;
 		if(menu == 1){
-			if(count > 0){ 
-				#ifdef
-      					printf("debug : call listPerson(plist,curCount)\n");
-   				#endif
+			if(count > 0){
+				#ifdef DEBUG
+					printf("debug : call listPerson(plist, curCount)\n");
+				#endif
 				listPerson(plist, curCount);
 			}
 			else
 				printf("=> 데이터없음.\n");
 		}
-		else if(menu == 2){
-			#ifdef
-      				printf("debug : call createPerson(&plist[curCount++])\n");
-   			#endif
+		else if(menu == 2){		
+			#ifdef DEBUG
+				printf("debug : call createPerson(&plist[curCount++])\n");
+			#endif
 			count += createPerson(&plist[curCount++]);
 			printf("=>%s의 주소록 저장됨.\n\n",plist[curCount-1].name);
 		}
@@ -62,18 +58,18 @@ int main(void){
 			if(count <= 0){
 				printf("=> 데이터없음.\n");
 				continue;
-			}else{
-				#ifdef
-      					printf("debug : call selectDataNum(plist,curCount))\n");
-   				#endif
+			}else{	
+				#ifdef DEBUG
+					printf("debug : call selectDataNum(plist, curCount)\n");
+				#endif
 				int num = selectDataNum(plist, curCount);
 				if(num == 0){
 					printf("=> 취소됨!\n");
 					continue;
 				}
-				#ifdef
-      					printf("debug : call updatePerson(&plist[num-1])\n");
-   				#endif
+				#ifdef DEBUG
+					printf("debug : call updatePerson(&plist[num-1])\n");
+				#endif
 				updatePerson(&plist[num-1]);
 			}
 		}
@@ -82,16 +78,17 @@ int main(void){
 				printf("=>데이터없음.\n");
 				continue;
 			}else{
-				#ifdef
-      					printf("debug : call selectDataNum(plist,curCount))\n");
-   				#endif
+				#ifdef DEBUG
+					printf("debug : call selectDataNum(plist, curCount)\n");
+				#endif
 				int num = selectDataNum(plist, curCount);
+				if(num == 0){
 					printf("=> 취소됨!\n");
 					continue;
 				}
-				#ifdef
-      					printf("debug : call deletePerson(&plist[num-1])\n");
-   				#endif
+				#ifdef DEBUG
+					printf("debug : call deletePerson(&plist[num-1])\n");
+				#endif
 				deletePerson(&plist[num-1]);
 				count--;
 			}
@@ -102,9 +99,9 @@ int main(void){
 				printf("=> 데이터없음.\n");
 				continue;
 			}
-			#ifdef
-      				printf("debug : call searchName(plist,curCount)\n");
-   			#endif
+			#ifdef DEBUG
+				printf("debug : call searchName(plist, curCount)\n");
+			#endif
 			searchName(plist, curCount);
 		}
 
@@ -113,9 +110,9 @@ int main(void){
 				printf("=>데이터 없음.\n");
 				continue;
 			}
-			#ifdef
-      				printf("debug : call searchPhone(plist,curCount)\n");
-   			#endif
+			#ifdef DEBUG
+				printf("debug : call searchPhone(plist, curCount)\n");
+			#endif
 			searchPhone(plist, curCount);
 		}	
 
@@ -123,17 +120,18 @@ int main(void){
 			int opt; //생일 검색 옵션(1. 생년, 2. 생일)
 			printf("1. 출생년도 검색\n");
 			printf("2. 생일 검색(월일)\n");
+			printf("=> 검색 옵션은? ");
 			scanf("%d",&opt);
 			if(opt == 1){
-				#ifdef
-      					printf("debug : call searchYob(plist,curCount)\n");
-   				#endif
+				#ifdef DEBUG
+					printf("debug : call searchYob(plist, curCount)\n");
+				#endif
 				searchYob(plist, curCount);
 			}
 			else if(opt == 2){
-				#ifdef
-      					printf("debug : call searchDob(plist,curCount)\n");
-   				#endif
+				#ifdef DEBUG
+					printf("debug : call searchDob(plist, curCount)\n");
+				#endif
 				searchDob(plist, curCount);
 			}
 			else
@@ -144,15 +142,15 @@ int main(void){
 				printf("=> 데이터없음.\n");
 				continue;
 			}
-			#ifdef
-      				printf("debug : call savaData(plist,curCount)\n");
-   			#endif
+			#ifdef DEBUG
+				printf("debug : call saveData(plist, curCount)\n");
+			#endif
 			saveData(plist, curCount);
 		}
 	}
-	#ifdef
-      		printf("debug : exit while loop\n");
-   	#endif
+	#ifdef DEBUG
+		printf("debug : exit while loop\n");
+	#endif
 	printf("=> 프로그램 종료\n");
 	return 0;
 }
