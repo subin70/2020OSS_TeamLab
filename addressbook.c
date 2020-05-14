@@ -28,6 +28,9 @@ int main(void){
    	#endif
 	count = loadData(plist);
 	curCount = count;
+#ifdef
+      printf("debug : call loadData(plist)\n");
+   #endif
 
 	#ifdef
       		printf("debug : enter the while loop\n");
@@ -141,9 +144,15 @@ int main(void){
 				printf("=> 데이터없음.\n");
 				continue;
 			}
+			#ifdef
+      				printf("debug : call savaData(plist,curCount)\n");
+   			#endif
 			saveData(plist, curCount);
 		}
 	}
+	#ifdef
+      		printf("debug : exit while loop\n");
+   	#endif
 	printf("=> 프로그램 종료\n");
 	return 0;
 }
