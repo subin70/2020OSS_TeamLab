@@ -1,4 +1,5 @@
 #include "address.h"
+
 int selectDataNum(Person *p, int count){
         listPerson(p, count);
         int index;      // index번호 저장
@@ -6,7 +7,6 @@ int selectDataNum(Person *p, int count){
         scanf("%d", &index);
         return index;
 }
-
 void saveData(Person *p, int count){
         FILE *fp = fopen("person.txt", "wt");
         for(int i = 0; i < count; i++){
