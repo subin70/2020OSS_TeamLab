@@ -120,6 +120,7 @@ int main(void){
 			int opt; //생일 검색 옵션(1. 생년, 2. 생일)
 			printf("1. 출생년도 검색\n");
 			printf("2. 생일 검색(월일)\n");
+			printf("=> 검색 옵션은? ");
 			scanf("%d",&opt);
 			if(opt == 1){
 				#ifdef DEBUG
