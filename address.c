@@ -84,9 +84,6 @@ void searchDob(Person *p, int count){
 	
 	printf("검색할 생일(월일)은(4자리)? ");
 	scanf("%2d%2d", &smth, &sday);
-	printf("\n============ 검색결과 ============\n");
-	printf("검색할 생일(월일)은?: ");
-	scanf("%2d%2d", &smth, &sday);
 	printf("\n======= 검색결과 =======\n");
 	for(int i = 0; i<count; i++){
 		if(p[i].dob.day != -1){
